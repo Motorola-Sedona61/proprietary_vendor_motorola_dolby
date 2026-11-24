@@ -1,0 +1,2 @@
+ro.vendor.dolby.dap_bypassed_on_tiny_volume u:object_r:vendor_dolby_prop:s0 exact bool
+persist.vendor.audio.dolby.tws_tuning       u:object_r:vendor_dolby_prop:s0 exact bool

@@ -1,0 +1,27 @@
+hal_attribute(dolby_dms)
+
+type hal_dolby_dms_service, hal_service_type, protected_service, service_manager_type;
+hal_attribute_service(hal_dolby_dms, hal_dolby_dms_service)
+binder_call(hal_dolby_dms_client, hal_dolby_dms_server)
+binder_call(hal_dolby_dms_server, hal_dolby_dms_client)
+binder_use(hal_dolby_dms_server)
+
+# The 64-bit audio effects HAL hosts DAP. The Dolby component store uses mediacodec.
+hal_client_domain(hal_audio_default, hal_dolby_dms)
+hal_client_domain(mediacodec, hal_dolby_dms)
+binder_use(hal_audio_default)
+binder_use(mediacodec)
+
+type hal_dolby_dms_default, domain;
+type hal_dolby_dms_default_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(hal_dolby_dms_default)
+hal_server_domain(hal_dolby_dms_default, hal_dolby_dms)
+
+# Init creates the state directory. DMS owns the files stored there.
+type dolby_data_file, data_file_type, file_type;
+allow hal_dolby_dms_default dolby_data_file:dir rw_dir_perms;
+allow hal_dolby_dms_default dolby_data_file:file create_file_perms;
+
+vendor_internal_prop(vendor_dolby_prop)
+get_prop(hal_audio_default, vendor_dolby_prop)
+get_prop(hal_dolby_dms_default, vendor_dolby_prop)

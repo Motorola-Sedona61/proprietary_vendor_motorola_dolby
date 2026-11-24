@@ -1,0 +1,330 @@
+// SPDX-License-Identifier: Apache-2.0
+
+soong_namespace {
+}
+
+cc_defaults {
+    name: "motorola_dolby_prebuilt_defaults",
+    compile_multilib: "64",
+    owner: "dolby",
+    soc_specific: true,
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library_shared {
+    name: "libcodec2_soft_ac4dec",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/libcodec2_soft_ac4dec.so"],
+    shared_libs: [
+        "libbase",
+        "libc",
+        "libc++",
+        "libcodec2",
+        "libcodec2_soft_common",
+        "libcodec2_store_dolby",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdeccfg",
+        "libdl",
+        "libdmshal",
+        "liblog",
+        "libm",
+        "libstagefright_foundation",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libcodec2_soft_ddpdec",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/libcodec2_soft_ddpdec.so"],
+    shared_libs: [
+        "libbase",
+        "libc",
+        "libc++",
+        "libcodec2",
+        "libcodec2_soft_common",
+        "libcodec2_store_dolby",
+        "libcodec2_vndk",
+        "libcutils",
+        "libdeccfg",
+        "libdl",
+        "libdmshal",
+        "liblog",
+        "libm",
+        "libstagefright_foundation",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libcodec2_store_dolby",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/libcodec2_store_dolby.so"],
+    shared_libs: [
+        "libbase",
+        "libc",
+        "libc++",
+        "libcodec2",
+        "libcodec2_vndk",
+        "libdl",
+        "libdmabufheap",
+        "liblog",
+        "libm",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libdapparamstorage",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/libdapparamstorage.so"],
+    shared_libs: [
+        "libc",
+        "libc++",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libdeccfg",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/libdeccfg.so"],
+    shared_libs: [
+        "libc",
+        "libc++",
+        "libcutils",
+        "libdapparamstorage",
+        "libdl",
+        "libdmshal",
+        "liblog",
+        "libm",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libdlbdsservice",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/libdlbdsservice.so"],
+    shared_libs: [
+        "libc",
+        "libc++",
+        "libcrypto",
+        "libcutils",
+        "libdapparamstorage",
+        "libdl",
+        "liblog",
+        "libm",
+        "libsqlite",
+        "libstagefright_foundation",
+        "libutils",
+        "libxml2",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libdlbpreg",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/libdlbpreg.so"],
+    shared_libs: [
+        "libaudioutils",
+        "libc",
+        "libc++",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libstagefright_foundation",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libdmshal",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/libdmshal.so"],
+    shared_libs: [
+        "libbinder",
+        "libbinder_ndk",
+        "libc",
+        "libc++",
+        "libcutils",
+        "libdapparamstorage",
+        "libdl",
+        "libhidlbase",
+        "liblog",
+        "libm",
+        "libutils",
+        "vendor.dolby.dms-V1-ndk",
+        "vendor.dolby.hardware.dms@2.0",
+        "vendor.dolby.hardware.dms@2.1",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libdlbvol",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/soundfx/libdlbvol.so"],
+    relative_install_path: "soundfx",
+    shared_libs: [
+        "libaudioutils",
+        "libc",
+        "libc++",
+        "libcutils",
+        "libdl",
+        "libdlbpreg",
+        "liblog",
+        "libm",
+        "libstagefright_foundation",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libswdap",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/soundfx/libswdap.so"],
+    relative_install_path: "soundfx",
+    shared_libs: [
+        "libaudioutils",
+        "libc",
+        "libc++",
+        "libcutils",
+        "libdapparamstorage",
+        "libdl",
+        "libdlbpreg",
+        "libdmshal",
+        "liblog",
+        "libm",
+        "libstagefright_foundation",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libswgamedap",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/soundfx/libswgamedap.so"],
+    relative_install_path: "soundfx",
+    shared_libs: [
+        "libaudioutils",
+        "libc",
+        "libc++",
+        "libcutils",
+        "libdapparamstorage",
+        "libdl",
+        "libdlbpreg",
+        "libdmshal",
+        "liblog",
+        "libm",
+        "libstagefright_foundation",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.dolby.dms-V1-ndk",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/vendor.dolby.dms-V1-ndk.so"],
+    shared_libs: [
+        "libbinder_ndk",
+        "libc",
+        "libc++",
+        "libdl",
+        "libm",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.dolby.hardware.dms@2.0",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.0.so"],
+    shared_libs: [
+        "libc",
+        "libc++",
+        "libcutils",
+        "libdl",
+        "libhidlbase",
+        "liblog",
+        "libm",
+        "libutils",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.dolby.hardware.dms@2.1",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.1.so"],
+    shared_libs: [
+        "libc",
+        "libc++",
+        "libcutils",
+        "libdl",
+        "libhidlbase",
+        "liblog",
+        "libm",
+        "libutils",
+        "vendor.dolby.hardware.dms@2.0",
+    ],
+}
+
+cc_prebuilt_binary {
+    name: "vendor.dolby.dms.service",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/bin/hw/vendor.dolby.dms.service"],
+    relative_install_path: "hw",
+    init_rc: ["proprietary/vendor/etc/init/dms-service.rc"],
+    vintf_fragments: ["proprietary/vendor/etc/vintf/manifest/dms-service.xml"],
+    shared_libs: [
+        "libbase",
+        "libbinder",
+        "libbinder_ndk",
+        "libc",
+        "libc++",
+        "libdapparamstorage",
+        "libdl",
+        "libdlbdsservice",
+        "libdmshal",
+        "liblog",
+        "libm",
+        "libutils",
+        "vendor.dolby.dms-V1-ndk",
+    ],
+}
+
+cc_prebuilt_binary {
+    name: "vendor.dolby.media.c2@1.0-service",
+    defaults: ["motorola_dolby_prebuilt_defaults"],
+    srcs: ["proprietary/vendor/bin/hw/vendor.dolby.media.c2@1.0-service"],
+    relative_install_path: "hw",
+    init_rc: ["proprietary/vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc"],
+    vintf_fragments: ["manifest_codec2.xml"],
+    shared_libs: [
+        "android.hardware.media.c2@1.0",
+        "android.hardware.media.c2@1.1",
+        "android.hardware.media.c2@1.2",
+        "libavservices_minijail",
+        "libbase",
+        "libbinder",
+        "libc",
+        "libc++",
+        "libcodec2",
+        "libcodec2_hidl@1.0",
+        "libcodec2_hidl@1.1",
+        "libcodec2_hidl@1.2",
+        "libcodec2_store_dolby",
+        "libcodec2_vndk",
+        "libdl",
+        "libhidlbase",
+        "liblog",
+        "libm",
+        "libutils",
+    ],
+}
