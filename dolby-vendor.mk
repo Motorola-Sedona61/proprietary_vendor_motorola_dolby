@@ -5,6 +5,7 @@ PRODUCT_SOONG_NAMESPACES += $(MOTOROLA_DOLBY_PATH)
 
 PRODUCT_PACKAGES += \
     HalcyonDolby \
+    HalcyonDolbyOverlayMotorola \
     libcodec2_soft_ac4dec \
     libcodec2_soft_ddpdec \
     libdlbvol \

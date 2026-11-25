@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Motorola Malmo dax-default.xml profiles: Dynamic(0), Movie(1), Music(2), Game(8), Voice(9).
+         Tokens are resolved to HalcyonDolby's localized @string/dolby_profile_* at runtime. -->
+    <string-array name="dolby_profile_entries" translatable="false">
+        <item>dynamic</item>
+        <item>video</item>
+        <item>music</item>
+        <item>game</item>
+        <item>voice</item>
+    </string-array>
+
+    <string-array name="dolby_profile_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+    <!-- Motorola DeAmountTranslator steps [0..12] -->
+    <string-array name="dolby_dialogue_values" translatable="false">
+        <item>0</item>
+        <item>3</item>
+        <item>6</item>
+        <item>9</item>
+        <item>12</item>
+    </string-array>
+
+    <!-- Motorola ProfileEndpointSWParameterStrategy range [4..160] -->
+    <string-array name="dolby_stereo_values" translatable="false">
+        <item>4</item>
+        <item>16</item>
+        <item>35</item>
+        <item>100</item>
+        <item>160</item>
+    </string-array>
+
+    <!-- Motorola dax-default.xml IEQ presets: 1=detailed, 2=balanced, 3=warm.
+         Tokens are resolved to HalcyonDolby's localized @string/dolby_* at runtime. -->
+    <string-array name="dolby_ieq_entries" translatable="false">
+        <item>off</item>
+        <item>detailed</item>
+        <item>balanced</item>
+        <item>warm</item>
+    </string-array>
+</resources>

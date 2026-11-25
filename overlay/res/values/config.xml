@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Work around Motorola libdlbdsservice.so bug in 3-arg setParameter(0x1000000) when hvm==2
+         by also sending setProfilePortParameter(0x2000000) on PORT_HEADPHONE. -->
+    <bool name="config_dolby_port_stereo_widening">true</bool>
+
+    <!-- Motorola dax-default.xml sets ieq-amount to 2..4; raise to >=10 when user enables IEQ. -->
+    <integer name="config_dolby_min_ieq_amount">10</integer>
+
+    <!-- Dynamic/Movie include ieq_preset=2 with ieq-enable=false in dax-default.xml; toggle
+         through 0 when selecting an already-matching preset ID so DsContext sets ieq_enable=1. -->
+    <bool name="config_dolby_force_ieq_reapply">true</bool>
+
+    <!-- Per-profile XML defaults: "profileId:ieq,dialogue,bass,stereo,volume,hpVirt,spkVirt" -->
+    <string-array name="config_dolby_profile_defaults" translatable="false">
+        <item>0:0,2,false,16,true,true,true</item>
+        <item>1:0,6,false,35,true,true,true</item>
+        <item>2:2,0,false,16,true,false,false</item>
+        <item>8:2,3,false,16,true,true,true</item>
+        <item>9:1,8,false,16,true,false,false</item>
+    </string-array>
+</resources>
